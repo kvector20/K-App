@@ -15,7 +15,6 @@ class MagiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_magi)
-        val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
 
         addtimline()
         var magazineView :RecyclerView = findViewById(R.id.recyclerView)
@@ -28,14 +27,26 @@ class MagiActivity : AppCompatActivity() {
 
     fun addtimline(){
 
-        timeline.add(mag(1,20,R.drawable.ic_menu_manage,"first"))
-        timeline.add(mag(2,25,R.drawable.custom,"second"))
-        timeline.add(mag(3,23,R.drawable.ic_launcher_background,"third"))
-        timeline.add(mag(4,2,R.drawable.ic_home_black_24dp,"fourth"))
-        timeline.add(mag(5,2,R.drawable.event_row,"fifth"))
-        timeline.add(mag(6,2,R.drawable.ic_menu_camera,"six"))
-        timeline.add(mag(7,2,R.drawable.ic_menu_send,"seven"))
+        timeline.add(mag(1,20,R.drawable.android,"first"))
+        timeline.add(mag(2,25,R.drawable.android3,"second"))
+        timeline.add(mag(1,20,R.drawable.android4,"first"))
+        timeline.add(mag(2,25,R.drawable.android2,"second"))
+        timeline.add(mag(1,20,R.drawable.android5,"first"))
+        timeline.add(mag(2,25,R.drawable.android1,"second"))
+        timeline.add(mag(3,23,R.drawable.pass,"third"))
 
+        timeline.add(mag(1,20,R.drawable.android,"first"))
+        timeline.add(mag(2,25,R.drawable.android3,"second"))
+        timeline.add(mag(1,20,R.drawable.android4,"first"))
+        timeline.add(mag(2,25,R.drawable.android2,"second"))
+        timeline.add(mag(1,20,R.drawable.android5,"first"))
+        timeline.add(mag(2,25,R.drawable.android1,"second"))
+        timeline.add(mag(1,20,R.drawable.android,"first"))
+        timeline.add(mag(2,25,R.drawable.android3,"second"))
+        timeline.add(mag(1,20,R.drawable.android4,"first"))
+        timeline.add(mag(2,25,R.drawable.android2,"second"))
+        timeline.add(mag(1,20,R.drawable.android5,"first"))
+        timeline.add(mag(2,25,R.drawable.android1,"second"))
     }
 }
 

@@ -28,13 +28,6 @@ class EventActivity : AppCompatActivity() {
         adapter.add(EventAdapter("1sjddddddd","dsjfffffffffffffffffffffffsdklffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"))
         adapter.add(EventAdapter("1sjddddddd","dsjfffffffffffffffffffffffsdklffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"))
 
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
-        adapter.add(EventAdapter("",""))
 
         recyclerView.adapter=adapter
     }
