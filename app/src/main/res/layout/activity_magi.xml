@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MagiActivity">
+        tools:context=".View.Activity.MagiActivity">
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
