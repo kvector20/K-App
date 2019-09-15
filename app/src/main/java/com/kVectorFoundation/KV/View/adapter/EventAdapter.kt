@@ -1,17 +1,17 @@
 package com.kVectorFoundation.KV.View.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kVectorFoundation.KV.Model.EventModel
 import com.kVectorFoundation.KV.R
-import com.kVectorFoundation.KV.View.Activity.ArticleActivity
-import kotlinx.android.synthetic.main.event_receycler.view.*
+import com.squareup.picasso.Picasso
 
-class EventAdapter(val address: String,val Discraption:String):RecyclerView.Adapter<EventHolder>(){
+class EventAdapter(var eventList:List<EventModel>):RecyclerView.Adapter<EventHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventHolder {
-        val intent = Intent(parent.context, ArticleActivity::class.java)
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.event_receycler, parent, false)
         return EventHolder(view)
@@ -20,17 +20,25 @@ class EventAdapter(val address: String,val Discraption:String):RecyclerView.Adap
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return eventList.size
     }
 
     override fun onBindViewHolder(holder: EventHolder, position: Int) {
-        holder.itemView.eventDiscribtionTV.text=Discraption
-        holder.itemView.eventAddresTV.text=address
+        holder.onBind(eventList[position])
     }
 
 }
 
 
 class EventHolder (view: View) : RecyclerView.ViewHolder(view) {
+    fun onBind(eventList:EventModel){
+        val title=itemView.findViewById<TextView>(R.id.eventTitleTV)
+        val description=itemView.findViewById<TextView>(R.id.eventDiscriptionTV)
+        val eventImage=itemView.findViewById<ImageView>(R.id.eventImage)
+        title.text=eventList.address
+        description.text=eventList.Descraption
+        Picasso.get().load(eventList.image).into(eventImage)
+
+    }
 
 }

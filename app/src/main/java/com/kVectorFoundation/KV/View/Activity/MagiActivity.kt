@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kVectorFoundation.KV.View.adapter.MagiAdapter
+import com.kVectorFoundation.KV.Model.MagList
 import com.kVectorFoundation.KV.R
 import com.kVectorFoundation.KV.Model.MagiModel
 import com.kVectorFoundation.KV.ViewModel.ApiUtil
@@ -14,20 +14,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MagiActivity : AppCompatActivity() {
-    var timeline: List<MagiModel>? = null
+    var timeline: List<MagList>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_magi)
-
-        addtimline()
         var magazineView :RecyclerView = findViewById(R.id.recyclerView)
         magazineView.layoutManager = LinearLayoutManager(this@MagiActivity,LinearLayoutManager.VERTICAL,false)
-        magazineView.adapter =
-            timeline?.let { MagiAdapter(it, this@MagiActivity) }
-
-
 
         ApiUtil.getServiceClass().allMag().enqueue(object : Callback<List<MagiModel>> {
 
@@ -36,8 +30,8 @@ class MagiActivity : AppCompatActivity() {
                 response: Response<List<MagiModel>>
             ) {
                 if (response.isSuccessful) {
-                    val postList = response.body()
-                    Log.d( "MagiActivity","Returned count " + postList!!.size)
+                    val magiList = response.body()
+                    Log.d( "MagiActivity","Returned count " + magiList!!.size)
                 }
             }
 
@@ -50,8 +44,6 @@ class MagiActivity : AppCompatActivity() {
 
     }
 
-    fun addtimline(){
-
-    }
 }
+
 
