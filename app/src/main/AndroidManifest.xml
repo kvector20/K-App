@@ -14,11 +14,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".View.Activity.ArticleActivity" />
-        <activity android:name=".View.Activity.EventActivity" />
-        <activity
-                android:name=".View.Activity.MagiActivity"
-                android:label="Magi" />
+        <activity android:name=".View.Activity.EventActivity"/>
+
+        <activity android:name=".View.Activity.MagiActivity"
+                android:label="Magazine" />
         <activity android:name=".View.Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

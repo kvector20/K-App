@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mag_navigation"
+        app:startDestination="@id/magYearFragment"
+        tools:ignore="UnusedNavigation">
+
+    <fragment
+            android:id="@+id/magYearFragment"
+            android:name="com.kVectorFoundation.KV.View.Fragment.MagYearFragment"
+            android:label="Year"
+            tools:layout="@layout/fragment_mag_year">
+        <action
+                android:id="@+id/action_magYearFragment_to_magTopicsFragment"
+                app:destination="@id/magTopicsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/magMonthFragment"
+            android:name="com.kVectorFoundation.KV.View.Fragment.MagMonthFragment"
+            android:label="fragment_mag_month"
+            tools:layout="@layout/fragment_mag_month" />
+    <fragment
+            android:id="@+id/magTitleFragment"
+            android:name="com.kVectorFoundation.KV.View.Fragment.MagTitleFragment"
+            android:label="fragment_mag_title"
+            tools:layout="@layout/fragment_mag_title" />
+    <fragment
+            android:id="@+id/magArticalFragment"
+            android:name="com.kVectorFoundation.KV.View.Fragment.MagArticalFragment"
+            android:label="fragment_mag_artical"
+            tools:layout="@layout/fragment_mag_artical" />
+    <fragment
+            android:id="@+id/magTopicsFragment"
+            android:name="com.kVectorFoundation.KV.View.Fragment.MagTopicsFragment"
+            android:label="fragment_mag_topics"
+            tools:layout="@layout/fragment_mag_topics" >
+        <action
+                android:id="@+id/action_magTopicsFragment_to_magArticalFragment"
+                app:destination="@id/magArticalFragment" />
+    </fragment>
+</navigation>

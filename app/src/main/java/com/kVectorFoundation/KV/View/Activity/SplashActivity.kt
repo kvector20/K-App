@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
+import androidx.core.app.ActivityCompat
 import com.kVectorFoundation.KV.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -17,6 +18,7 @@ class SplashActivity : AppCompatActivity() {
             R.anim.rotate_arrow
         )
         arrowIV.startAnimation(rotateAnimation)
+        supportActionBar!!.hide()
 
         var mHun: Handler?
         var splashDaly:Long=800
@@ -26,5 +28,6 @@ class SplashActivity : AppCompatActivity() {
     val mru:Runnable= Runnable {
         val i=Intent(this, HomeActivity::class.java)
         startActivity(i)
+        ActivityCompat.finishAffinity(this)
     }
 }
